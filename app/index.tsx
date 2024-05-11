@@ -63,15 +63,26 @@ export default function Index() {
  
  
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Text>Edit app/index.tsx to edit this screen.</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Detector de Quedas</Text>
+      <Text style={styles.text}>{errorMsg ? errorMsg : `Latitude: ${location ? location.coords.latitude : ''}, Longitude: ${location ? location.coords.longitude : ''}`}</Text>
+      <Text style={styles.text}>{errorMsg ? errorMsg : `X: ${data.x}, Y: ${data.y}, Z: ${data.z} `}</Text>
     </View>
   );
 }
- 
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#F5FCFF',
+  },
+  text: {
+    fontSize: 18,
+    textAlign: 'center',
+    margin: 10,
+  },
+})
+
